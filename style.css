@@ -350,15 +350,15 @@ textarea {
 5.1 Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #f07100;
     }
 a:visited {
-	color: purple;
+	color: #f07100;
     }
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #b03300;
     }
 
 /*--------------------------------------------------------------
@@ -368,6 +368,7 @@ a:active {
 	clear: both;
 	display: block;
 	width: 100%;
+	text-align: center;
     }
 .main-navigation ul {
 	list-style: none;
@@ -375,9 +376,11 @@ a:active {
 	padding-left: 0;
     }
 .main-navigation li {
-	float: left;
-	position: relative;
-	margin: 0 1em 1em 0;
+    display: inline-block;
+	margin: 0 1em 0 0;
+    }
+.main-navigation li:last-child {
+    margin: 0;
     }
 .main-navigation a {
 	display: block;
@@ -684,22 +687,189 @@ END ORIGINAL _S CODE
 --------------------------------------------------------------*/
 
 .site {
-    margin: 1em;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    background: #f9ffff;
+    }
+    
+a.skip-link {
+    -webkit-order: 1;
+    order: 1;
+    }
+    
+div#content {
+    -webkit-order: 2;
+    order: 2;
     }
 
-.site-branding .avatar {
-    width: 50px;
+header#masthead {
+    -webkit-order: 3;
+    order: 3;
+    }
+
+footer#colophon {
+    -webkit-order: 4;
+    order: 4;
+    }
+
+.site-header {
+    background: #d1e9fd;
+    padding: 1em 0;
+    }
+
+.site-header .site-branding,
+.site-header .main-navigation {
+    padding: 0 1em;
+    }
+
+.site-header .avatar {
+    width: 3.6em;
     height: auto;
-    margin: 0 1em 1em 0;
+    margin: 0.4em 0.75em 0.5em 0;
     float: left;
     }
-
-.site-branding {
-    margin: 1em 0;
-    }   
+    
+.site-content {
+    padding: 1em;
+    }
+    
+.site-footer {
+    padding: 1em;
+    text-align: center;
+    }
 
 h1 {
-    font-size: 1.618em;
-    border-bottom: 1px solid #000;
-    margin-bottom: 0.5em;
+    font-family: ff-meta-web-pro, sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    line-height: 1.25em;
+    color: #3ba0f6;
     }
+    
+h1 a,
+h1 a:visited {
+    text-decoration: none;
+    color: #3ba0f6;
+    }
+
+h1 a:focus,
+h1 a:active {
+    text-decoration: none;
+    color: #4384db;
+    }
+
+h1 a:hover {
+    text-decoration: underline;
+    color: #4384db;
+    }
+    
+.entry-footer span::after {
+    content: ' · ';
+    }
+    
+.entry-footer span:last-child::after {
+    content: '';
+    }
+    
+
+
+
+
+/*--------------------------------------------------------------
+MEDIA QUERIES - YAY RESPONSIVE DESIGN!
+--------------------------------------------------------------*/
+
+/* When browser width hits 34em (yielding a main content width of ~2.3
+   alphabets, move the masthead to the top of the page and start
+   scaling the text. */
+@media screen and (min-width: 34em) {
+
+    body,
+    button,
+    input,
+    select,
+    textarea {
+        font-size: 2.941vw; /* 16 ÷ 544 × 100 = 2.941 */
+        }
+        
+    .site-header .site-branding,
+    .site-header .main-navigation {
+        width: 34em;
+        margin-left: auto;
+        margin-right: auto;
+        }
+        
+    .site-content {
+        width: 34em;
+        margin-left: auto;
+        margin-right: auto;
+        }
+        
+    .site-footer {
+        width: 34em;
+        margin-left: auto;
+        margin-right: auto;
+        }
+         
+    header#masthead {
+        -webkit-order: 2;
+        order: 2;
+        }
+    
+    div#content {
+        -webkit-order: 3;
+        order: 3;
+        }
+
+    }
+
+/* When font size hits 22px, stop scaling and center the main content. */
+@media screen and (min-width: 46.75em) {
+    
+    body,
+    button,
+    input,
+    select,
+    textarea {
+        font-size: 22px;
+        font-size: 2.2rem;
+        }
+    
+    }
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+FONT SIZES (GOLDEN RATIOS FOR 1EM AND 2EM)
+
+5.236em
+4.236em
+3.236em
+2.618em
+2.000em — h1
+1.618em — h2
+1.236em — h3
+1.000em — h4, h5, h6, normal text
+0.764em — small text, metadata, etc.
+0.618em
+0.472em
+
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+COLOR PALETTE GENERATED FROM MY AVATAR (AND TWEAKED SOME)
+http://colorpeek.com/#4384db,3ba0f6,d1e9fd,f9ffff,f4f0f1,f07100,b03300
+--------------------------------------------------------------*/

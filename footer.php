@@ -12,7 +12,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', '_lyte' ) ); ?>"><?php printf( __( 'Proudly powered by %s', '_lyte' ), 'WordPress' ); ?></a>
+			Copyright © 2003–<?php echo strftime("%y"); ?> Joey Day
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

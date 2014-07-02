@@ -10,13 +10,23 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <script type="text/javascript" src="//use.typekit.net/lkn6tyl.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
+<script src="/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="/hyphenate-3.3.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+			var hyphenatorSettings = {
+				selectorfunction: function () {
+					return $('div#content p').get();
+				}
+			};
+			Hyphenator.config(hyphenatorSettings);
+			Hyphenator.run();
+</script>
 <?php wp_head(); ?>
 </head>
 
