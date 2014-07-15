@@ -154,7 +154,14 @@ dfn, cite, em, i {
 	font-style: italic;
     }
 blockquote {
-	margin: 0 1.5em;
+	margin: 0 0.5em;
+	padding: 0 1em;
+	border-left: 3px solid #3ba0f6; 
+	font-style: italic;
+    }
+blockquote em,
+blockquote i {
+    font-style: normal;
     }
 address {
 	margin: 0 0 1.5em;
@@ -384,7 +391,6 @@ a:active {
     }
 .main-navigation a {
 	display: block;
-	text-decoration: none;
     }
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -498,6 +504,12 @@ a:active {
 	float: right;
 	margin-left: 1.5em;
     }
+figure.alignleft,
+figure.alignright,
+img.alignleft,
+img.alignright {
+    max-width: 45%;
+    }
 .aligncenter {
 	clear: both;
 	display: block;
@@ -558,7 +570,7 @@ a:active {
 .sticky {
     }
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 0 3em;
     }
 .byline,
 .updated {
@@ -638,10 +650,41 @@ object {
 	margin: 0 auto;
     }
 .wp-caption-text {
+    font-size: 0.764em;
+    color: #666;
+    font-style: italic;
 	text-align: center;
+	padding-bottom: 0.8075em;
+    border-bottom: 1px solid #ccc;
     }
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
+    }
+    
+@media screen and (min-width: 75em) {
+    .wp-caption {
+        position: relative;
+        }
+        
+    .wp-caption-text {
+        position: absolute;
+        top: 0;
+        width: 12.125em;
+        margin: 0;
+        padding: 0.8075em 0;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        }
+
+    .wp-caption.alignleft .wp-caption-text,
+    .wp-caption.aligncenter .wp-caption-text {
+        left: -13.625em;
+        }
+        
+    .wp-caption.alignright .wp-caption-text {
+        right: -13.625em;
+        }
+            
     }
 
 /*--------------------------------------------------------------
@@ -715,8 +758,10 @@ footer#colophon {
     }
 
 .site-header {
-    background: #d1e9fd;
+    background: #f07100;
     padding: 1em 0;
+    color: #fff;
+    margin-bottom: 2em;
     }
 
 .site-header .site-branding,
@@ -724,11 +769,20 @@ footer#colophon {
     padding: 0 1em;
     }
 
+.site-header a,
+.site-header a:visited,
+.site-header a:focus,
+.site-header a:active,
+.site-header a:hover {
+    color: #fff;
+    }
+
 .site-header .avatar {
-    width: 3.6em;
-    height: auto;
-    margin: 0.4em 0.75em 0.5em 0;
+    width: 3.75em;
+    margin: 0.25em 0.75em 0.25em 0;
     float: left;
+    border-radius: 
+    100%;
     }
     
 .site-content {
@@ -740,14 +794,18 @@ footer#colophon {
     text-align: center;
     }
 
-h1 {
+h1, h2, h3, .entry-subtitle {
     font-family: ff-meta-web-pro, sans-serif;
     font-weight: bold;
-    font-size: 2em;
-    margin-bottom: 1rem;
     text-transform: uppercase;
+    margin-bottom: 1rem;
+    }
+
+h1 {
+    font-size: 2em;
     line-height: 1.25em;
     color: #3ba0f6;
+    text-align: center;
     }
     
 h1 a,
@@ -767,6 +825,25 @@ h1 a:hover {
     color: #4384db;
     }
     
+h2 {
+    font-size: 1.618em;
+    }
+    
+h3 {
+    font-size: 1.236em;    
+    }
+
+.entry-subtitle {
+    font-weight: normal;
+    font-size: 1.236em;
+    text-align: center;
+    margin-bottom: 1em;
+    }
+
+.entry-meta {
+    text-align: center;
+    }
+    
 .entry-footer span::after {
     content: ' · ';
     }
@@ -775,9 +852,34 @@ h1 a:hover {
     content: '';
     }
     
+.site-content table {
+    border-collapse: collapse;
+    }
+    
+.site-content table td {
+    border: 1px solid #999;
+    padding: .5em;
+    }
+    
+hr {
+    width: 33%;
+    margin: 1.5em auto;
+    }
 
+hr.footnotes-divider {
+    width: 33%;
+    margin: 1.5em auto 1.5em 0;
+    }
+    
+ol.footnotes {
+    font-size: 0.764em;
+    }
 
-
+img.endmark {
+    width: 0.7em;
+    vertical-align: -0.0625em; /* 1px */
+    border-radius: 100%;
+    }
 
 /*--------------------------------------------------------------
 MEDIA QUERIES - YAY RESPONSIVE DESIGN!
@@ -796,11 +898,20 @@ MEDIA QUERIES - YAY RESPONSIVE DESIGN!
         font-size: 2.941vw; /* 16 ÷ 544 × 100 = 2.941 */
         }
         
+    h1 {
+        font-size: 2.618em;
+        }
+        
     .site-header .site-branding,
     .site-header .main-navigation {
         width: 34em;
         margin-left: auto;
         margin-right: auto;
+        }
+        
+    .site-header .avatar {
+        width: 4em;
+        margin: 0.25em 0.75em 0 0;
         }
         
     .site-content {
@@ -823,6 +934,11 @@ MEDIA QUERIES - YAY RESPONSIVE DESIGN!
     div#content {
         -webkit-order: 3;
         order: 3;
+        }
+        
+    blockquote {
+        margin: 0 1.25em;
+        padding: 0 1.25em;
         }
 
     }
@@ -861,7 +977,7 @@ FONT SIZES (GOLDEN RATIOS FOR 1EM AND 2EM)
 1.618em — h2
 1.236em — h3
 1.000em — h4, h5, h6, normal text
-0.764em — small text, metadata, etc.
+0.764em — metadata, footnotes, captions, etc.
 0.618em
 0.472em
 

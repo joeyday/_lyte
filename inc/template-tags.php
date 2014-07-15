@@ -133,3 +133,9 @@ function _lyte_category_transient_flusher() {
 }
 add_action( 'edit_category', '_lyte_category_transient_flusher' );
 add_action( 'save_post',     '_lyte_category_transient_flusher' );
+
+//[endmark]
+function endmark_func( $atts ){
+	return '&nbsp;<img src="/images/endmark.png" class="endmark" />';
+}
+add_shortcode( 'endmark', 'endmark_func' );
