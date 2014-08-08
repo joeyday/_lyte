@@ -17,7 +17,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', '_lyte' ) ); ?>
+		<?php the_content( __( 'Continue reading <span class="meta-nav">&rsaquo;</span>', '_lyte' ) ); ?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', '_lyte' ),

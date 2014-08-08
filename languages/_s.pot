@@ -109,11 +109,11 @@ msgid "Comment navigation"
 msgstr ""
 
 #: comments.php:36 comments.php:53
-msgid "&larr; Older Comments"
+msgid "&lsaquo; Older Comments"
 msgstr ""
 
 #: comments.php:37 comments.php:54
-msgid "Newer Comments &rarr;"
+msgid "Newer Comments &rsaquo;"
 msgstr ""
 
 #: comments.php:64
@@ -177,7 +177,7 @@ msgid ""
 msgstr ""
 
 #: content.php:24
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgid "Continue reading <span class=\"meta-nav\">&rsaquo;</span>"
 msgstr ""
 
 #: content.php:42
@@ -233,11 +233,11 @@ msgid "Posts navigation"
 msgstr ""
 
 #: inc/template-tags.php:25
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgid "<span class=\"meta-nav\">&lsaquo;</span> Older posts"
 msgstr ""
 
 #: inc/template-tags.php:29
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgid "Newer posts <span class=\"meta-nav\">&rsaquo;</span>"
 msgstr ""
 
 #: inc/template-tags.php:52
@@ -246,12 +246,12 @@ msgstr ""
 
 #: inc/template-tags.php:55
 msgctxt "Previous post link"
-msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgid "<span class=\"meta-nav\">&lsaquo;</span> %title"
 msgstr ""
 
 #: inc/template-tags.php:56
 msgctxt "Next post link"
-msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgid "%title <span class=\"meta-nav\">&rsaquo;</span>"
 msgstr ""
 
 #: inc/template-tags.php:82

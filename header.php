@@ -37,7 +37,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<img src="/images/joeyday.png" alt="Joey Day" class="avatar" />
-			<p class="blurb">Hi, I’m Joey. I’m a 30-something IT professional (read: big nerd) in Salt Lake City. When I grow up I’d like to be a seminary professor (read: even bigger nerd).</p>
+			<p class="blurb">Hi, I’m Joey. I’m a 30-something <abbr title="Information Technology">IT</abbr> professional (read: big nerd) in Salt Lake City. When I grow up I’d like to be a seminary professor (read: even bigger nerd).</p>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">

@@ -133,10 +133,10 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: skolar, Georgia, serif;
-    font-feature-settings: "kern", "liga";
-    -webkit-font-feature-settings: "kern", "liga";
-    -moz-font-feature-settings: "kern", "liga";
+	font-family: "ff-meta-serif-web-pro", Georgia, serif; /* Georgia is specified here as a Greek character fallback. */
+    font-feature-settings: "kern", "liga", "onum";
+    -webkit-font-feature-settings: "kern", "liga", "onum";
+    -moz-font-feature-settings: "kern", "liga", "onum";
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 1.5;
@@ -180,10 +180,10 @@ pre {
 code, kbd, tt, var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
     }
-abbr, acronym {
+/* abbr, acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
-    }
+    } */
 mark, ins {
 	background: #fff9c0;
 	text-decoration: none;
@@ -367,6 +367,9 @@ a:focus,
 a:active {
 	color: #b03300;
     }
+/* a[rel="tag"] {
+    text-transform: lowercase;
+    } */
 
 /*--------------------------------------------------------------
 5.2 Menus
@@ -795,7 +798,7 @@ footer#colophon {
     }
 
 h1, h2, h3, .entry-subtitle {
-    font-family: ff-meta-web-pro, sans-serif;
+    font-family: "ff-meta-web-pro", sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 1rem;
@@ -844,8 +847,14 @@ h3 {
     text-align: center;
     }
     
+.entry-footer {
+    font-family: "ff-meta-web-pro", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.764em;
+    }
+    
 .entry-footer span::after {
-    content: ' · ';
+    content: ' · ';
     }
     
 .entry-footer span:last-child::after {
@@ -880,6 +889,13 @@ img.endmark {
     vertical-align: -0.0625em; /* 1px */
     border-radius: 100%;
     }
+    
+abbr, acronym {
+    font-family: "ff-meta-serif-sc-web-pro", sans-serif;
+    text-transform: lowercase;
+    font-size: 1.05em;
+    }
+
 
 /*--------------------------------------------------------------
 MEDIA QUERIES - YAY RESPONSIVE DESIGN!
